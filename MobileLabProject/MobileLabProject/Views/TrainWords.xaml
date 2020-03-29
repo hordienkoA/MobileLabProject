@@ -13,8 +13,11 @@
                 <RowDefinition Height="0.8*"/>
                 <RowDefinition Height="0.1*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="ResetBtn" HorizontalOptions="End" Text="Сброс" Clicked="ResetBtn_Clicked"/>
-            <Label Grid.Row="1" x:Name="ActualField" HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding RussianWord}"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                <Button x:Name="ResetBtn" HorizontalOptions="End" Text="Сброс" Clicked="ResetBtn_Clicked"/>
+                <Button x:Name="SwitchBtn" HorizontalOptions="End" Text="Переключить" Clicked="SwitchBtn_Clicked"/>
+            </StackLayout>
+            <Label Grid.Row="1" x:Name="ActualField" HorizontalOptions="Center" VerticalOptions="Center"  Text="{Binding RussianWord}"/>
             <Grid  HorizontalOptions="Fill" Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.7*"/>
