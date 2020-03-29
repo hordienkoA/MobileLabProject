@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MobileLabProject.Views.WordPage"
+             Title="{Binding EnglishWord}">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="wordStack">
+                <Label Text="Русское слово"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.9*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry x:Name="RussianWord" Text="{Binding RussianWord}" FontSize="Medium"/>
+                    <ImageButton x:Name="SpeakRuBtn"  Source="speak.png" Clicked="SpeakRuBtn_Clicked"  HeightRequest="20"  Grid.Column="1" />
+                </Grid>
+                <Label Text="Английское слово"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.9*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry x:Name="EnglishWord" Text="{Binding EnglishWord}" FontSize="Medium"/>
+                    <ImageButton Grid.Column="1"  x:Name="SpeakEnglishBtn" Clicked="SpeakEnglishBtn_Clicked" Source="speak.png" HeightRequest="20" />
+                </Grid>
+                
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="Добавить" Command="{Binding ListViewModel.SaveWordCommand}" CommandParameter="{Binding}"/>
+                <Button Text="Удалить" Command="{Binding ListViewModel.DeleteWordCommand}" CommandParameter="{Binding}" />
+                <Button Text="Назад" Command="{Binding Path=ListViewModel.BackCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:MobileLabProject.Views"
+       xmlns:controls="clr-namespace:MobileLabProject.Controls"
+       x:Class="MobileLabProject.MainPage">
+    <Shell.FlyoutHeader>
+        <controls:FlayoutHeader/>
+    </Shell.FlyoutHeader>
+    <FlyoutItem Title="Управление словами"
+            FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Управление словами">
+            
+            <views:WordsListPage/>
+            
+        </ShellContent>
+        <ShellContent Title="Тренировка слов">
+            <views:TrainWords/>
+        </ShellContent>
+    </FlyoutItem>
+
+</Shell>
